@@ -1,0 +1,48 @@
+name: CI - Automated Retirement Flow
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  automated-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Start xvfb (for headed mode, optional)
+        run: |
+          export DISPLAY=':99.0'
+          Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+        shell: bash
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: |
+          chmod +x ./run-tests.sh
+          ./run-tests.sh
+        env:
+          CI: true
+          DISPLAY: :99.0
+
+      - name: Upload HTML report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-html-report
+          path: reports/html
+
+      - name: Publish report link to GitHub summary
+        run: |
+          echo "## Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "[ View Report Artifact](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY

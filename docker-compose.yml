@@ -1,0 +1,40 @@
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: retirement-tests
+    working_dir: /work
+    volumes:
+      - .:/work
+    env_file:
+      - .env
+    command: bash -c "./run-tests.sh"
+
+  report:
+    image: node:18
+    container_name: retirement-report
+    working_dir: /work
+    volumes:
+      - .:/work
+    ports:
+      - "8888:8888"
+    depends_on:
+      - tests
+    command: >
+      sh -c "npm install -g serve && serve /work/reports/html -l 8888"
+
+  test-and-report:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: retirement-test-and-report
+    working_dir: /work
+    volumes:
+      - .:/work
+    env_file:
+      - .env
+    ports:
+      - "8888:8888"
+    command: >
+      bash -c "./run-tests.sh && npx serve /work/reports/html -l 8888"

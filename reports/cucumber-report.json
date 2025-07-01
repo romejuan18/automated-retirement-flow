@@ -1,0 +1,154 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "retirement-flow;complete-the-retirement-flow-and-verify-contact-title",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Complete the retirement flow and verify contact title",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 130692544
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I navigate to the homepage and accept cookies",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12935865022
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I go to the Retirement and Wealth page",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 757747951
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I scroll to the innovation section",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254341508
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I hover over the AI & Machine Learning card",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 550322952
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the AI card back text",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7655111
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click Let's Get Started",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 351727144
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should be on the contact page",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 340071
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the title should contain \"Let’s talk\"",
+            "match": {
+              "location": "dist/tests/step-definitions/retirementFlow.steps.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 196874074
+            },
+            "embeddings": [
+              {
+                "data": "Q3VycmVudCBwYWdlIFVSTDogaHR0cHM6Ly9ibGFua2ZhY3Rvci5jb20vY29udGFjdC8=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBwYWdlIHRpdGxlOiAgTGV04oCZcyB0YWxr",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 18647856
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "retirement-flow",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Retirement Flow",
+    "tags": [],
+    "uri": "dist/tests/features/retirement-flow.feature"
+  }
+]

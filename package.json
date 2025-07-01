@@ -1,0 +1,39 @@
+{
+  "name": "automated-retirement-flow",
+  "version": "1.0.0",
+  "description": "End-to-end testing of retirement flow using Playwright and Cucumber",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "./run-tests.sh",
+    "test:gherkin": "cucumber-js --config cucumber.cjs",
+    "test:dist": "cucumber-js --config cucumber.cjs",
+
+    "generate:report": "node generate-report.js",
+    "serve:report": "npx serve reports/html -l 8888",
+
+    "docker:test": "make run",
+    "docker:report": "make report",
+    "docker:all": "make all",
+    "docker:clean": "make clean",
+    "docker:reset": "make reset"
+  },
+  "author": "Juan Pablo Romero",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romejuan18/automated-retirement-flow.git"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@types/node": "^20.11.30",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "playwright": "^1.53.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0"
+  }
+}
